@@ -1,0 +1,661 @@
+body{
+  background:linear-gradient(to bottom, #511065,#260b2C);
+  margin: 0;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+ h1, h2 {
+  font-family: 'Press Start 2P', monospace;
+  font-size:20px;
+  line-height: 1.5;
+}
+p {
+   font-family: 'Press Start 2P', monospace;
+  font-size:20px;
+  line-height: 2.5;
+}
+
+.titulo-error {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 22px;
+  color: #E33A24;        /* violeta oscuro */
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 0 #2e1065;
+  letter-spacing: 2px;
+  animation: shake 0.4s ease-in-out;
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.panel-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* centra horizontal */
+  text-align: center;
+  gap: 18px;               /* separación entre título y texto */
+  margin-top: 30px;        /* baja un poquito todo */
+  animation: pop 0.4s ease-out;
+}
+
+.texto-panel {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.subtexto {
+  display: block;          /* fuerza línea nueva */
+  margin-top: 12px;
+  font-size: 12px;
+  color: #4c1d95;
+  opacity: 0.85;
+}
+.titulo-reglas {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 22px;
+  color: #2e1065;        /* violeta oscuro */
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 0 #2e1065;
+}
+.reglas {
+  text-align: left;
+  font-size: 1rem;   /* más chico */
+  line-height: 1.6;     /* aire entre líneas */
+  opacity: 0.85;        /* look subtexto */
+}
+.titulo-nivel {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 22px;
+  color: #2e1065;        /* violeta oscuro */
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 0 #2e1065;
+}
+
+
+
+/*DECORACION*/
+.decoracion {
+  position: absolute;
+  pointer-events: none; /* no molesta al click */
+  image-rendering: pixelated; /* CLAVE pixel */
+}
+
+
+.nube {
+  width: 220px;
+  height: 140px;
+  background: url("img/cloud.png") no-repeat center;
+  background-size: contain;
+}
+.top-left {
+  top: 10px;
+  left: 90px;
+}
+.bottom-right {
+  bottom: 300px;
+  right: 0px;
+}
+
+.nube1 {
+  width: 160px;
+  height: 100px;
+  background: url("img/cloud.png") no-repeat center;
+  background-size: contain;
+}
+.bottom-right1 {
+  bottom: 100px;
+  right: 250px;
+}
+
+.nube2 {
+  width: 100px;
+  height: 50px;
+  background: url("img/cloud1.png") no-repeat center;
+  background-size: contain;
+}
+.bottom-left2 {
+  bottom: 290px;
+  left: 250px;
+}
+
+.cloud{
+  width: 220px;
+  height: 140px;
+  background: url("img/cloud2.png") no-repeat center;
+  background-size: contain;
+}
+.bottom-left {
+  bottom: 3px;
+  left: 70px;
+}
+
+.estrella {
+  width: 48px;
+  height: 48px;
+  background: url("img/star.png") no-repeat center;
+  background-size: contain;
+}
+.estrella-1 {
+  top: 30%;
+  left: 10%;
+}
+.estrella-2 {
+  bottom: 25%;
+  right: 15%;
+}
+
+.star {
+  width: 35px;
+  height: 35px;
+  background: url("img/star1.png") no-repeat center;
+  background-size: contain;
+  }
+.star1{
+bottom: 52%;
+left:2%
+}
+.star2{
+bottom: 15%;
+left:20%
+}
+.star3{
+top: 15%;
+right:5%
+}
+.star4{
+top: 7%;
+right:40%
+}
+.star5{
+bottom: 7%;
+right:25%
+}
+
+.stars {
+  width: 48px;
+  height: 48px;
+  background: url("img/star2.png") no-repeat center;
+  background-size: contain;
+}
+.stars1{
+top: 8%;
+left:30%
+}
+.stars2{
+bottom: 5%;
+left:40%
+}
+.stars3{
+bottom: 5%;
+right:5%
+}
+
+.sol {
+  width: 25px;
+  height: 25px;
+  background: url("img/star3.png") no-repeat center;
+  background-size: contain;
+}
+.sol1{
+top: 8%;
+left:40%
+}
+.sol2{
+top: 40%;
+left:24%
+}
+.sol3{
+bottom: 20%;
+left:10%
+}
+.sol4{
+bottom: 8%;
+right:40%
+}
+.sol5{
+top: 40%;
+right:20%
+}
+.sol6{
+bottom: 25%;
+left:40%
+}
+
+.saturno {
+  width: 150px;
+  height: 140px;
+  background: url("img/saturn.png") no-repeat center;
+  background-size: contain;
+}
+.top-right{
+top: 10px;
+right: 200px
+}
+
+@keyframes flotar {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+
+.corazon-flotante {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: url("img/heart.png") no-repeat center;
+  background-size: contain;
+  image-rendering: pixelated;
+  pointer-events: none;
+  opacity: 0;
+  animation: subir-corazon 2.8s ease-out forwards;
+}
+
+@keyframes subir-corazon {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+
+.sticker {
+  position: absolute;       /* Permite posicionarlo libremente */
+  pointer-events: none;     /* Para que no moleste al hacer click en los botones */
+  image-rendering: pixelated; /* Si son pixel art */
+  z-index: 10;              /* Para que siempre esté por encima de otros elementos */
+  opacity: 0;               /* Por defecto oculto, lo mostraremos con JS */
+  transition: opacity 0.5s ease; /* Efecto suave al aparecer */
+}
+
+.sticker.level {
+  width: 200px;             /* Tamaño del sticker */
+  top: 50px;               /* Distancia desde arriba del panel */
+  left: 500px;              /* Distancia desde la izquierda del panel */
+  animation: flotar 8s ease-in-out infinite; /* Puedes reusar tu animación de flotar */
+  margin: 10px auto;
+}
+
+.sticker.heart.inline {
+position:static;
+  width: 40px;             /* Tamaño del sticker */
+  top: 50px;               /* Distancia desde arriba del panel */
+  left: 50px;              /* Distancia desde la izquierda del panel */
+  animation: flotar 8s ease-in-out infinite; /* Puedes reusar tu animación de flotar */
+  margin: 0;
+}
+.texto-corazon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+#area-contenido {
+  position: relative; /* ¡CLAVE! Para que los stickers se posicionen con respecto a él */
+  /* ... tus otros estilos de #area-contenido ... */
+}
+.container {
+  position: relative; /* ¡CLAVE! */
+  /* ... tus otros estilos de .container ... */
+}
+
+.decoracion {
+  animation: flotar 10s ease-in-out infinite;
+}
+/*DECORACION*/
+
+
+.container {
+  /*background: #c0b8ff;   /*#e1b19b,#83C977*/
+
+  background: linear-gradient(
+    to bottom,
+    #ede9fe,
+    #dfd9ff
+  );
+  color: #2e1065;
+  border: 4px solid #9A45BA;
+  border-radius: 0;
+  text-align: center;
+  box-shadow:
+    0 0 0 4px #9A45BA,
+    8px 8px 0 4px #813A99;
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 520px;
+  min-height: 260px;
+  height: auto;
+  padding-bottom:20px;
+
+  margin: 80px auto;
+  padding: 28px 32px;
+  opacity: 1;
+  transform: translateY(0);
+  transition:opacity 0.4s ease, transform 0.4s ease;
+}
+.panel-hide {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+
+
+button {
+  background: #fffbeb;
+  color: #1e3a8a;
+  font-family: 'Press Start 2P', monospace; 
+  margin: 8px;
+  padding: 10px 15px;
+  border: 3px solid #2e1065;
+  border-radius: 0;
+  box-shadow: 
+  4px 4px 0 1px #2e1065;      /* sombra pixel */
+  cursor: pointer;
+  position: relative;
+}
+.botones-columnas {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* 2 columnas */
+  gap: 20px;
+  justify-content: center;
+  margin-top: 24px;
+}
+.botones-columnas .card {
+  width: 160px;
+}
+.botones-columnas button {
+  width: 160px;
+}
+
+
+.seguir-wrapper {
+  grid-column: 1 / -1;   /* ocupa TODAS las columnas */
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.recompensa {
+  position: relative;
+  width: 320px;
+  height: 100px;
+  margin: 10px auto;
+}
+
+.recompensa button {
+  position: absolute;
+  transition: left 0.12s ease, top 0.12s ease;
+}
+.recompensa .si {
+  left: 30px;
+  top: 20px;
+}
+.recompensa .no {
+  left: 180px;
+  top: 20px;
+}
+
+@keyframes rewardTitleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) translateY(30px);
+    letter-spacing: -5px;
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.2) translateY(-5px);
+    letter-spacing: 2px;
+  }
+  80% {
+    transform: scale(0.95) translateY(0);
+  }
+  100% {
+    transform: scale(1);
+    letter-spacing: 1px;
+  }
+}
+
+@keyframes rewardGlow {
+  0% {
+    text-shadow: 0 0 0px rgba(255, 180, 220, 0);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 180, 220, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 0px rgba(255, 180, 220, 0);
+  }
+}
+
+.titulo-reward.glow {
+  animation:
+    rewardTitleIn 0.7s cubic-bezier(.17,.89,.32,1.49),
+    rewardGlow 2.5s ease-in-out infinite;
+}
+
+.titulo-reward {
+  font-size: 2.2rem;
+  text-align: center;
+  animation: rewardTitleIn 0.7s cubic-bezier(.17,.89,.32,1.49);
+}
+
+
+@keyframes shake {
+  0%   { transform: translate(4px, 4px); }
+  25%  { transform: translate(5px, 4px); }
+  50%  { transform: translate(4px, 5px); }
+  75%  { transform: translate(3px, 4px); }
+  100% { transform: translate(4px, 4px); }
+}
+button:active {
+  animation: shake 0.1s steps(1);
+  box-shadow: 0 0 0 #2e1065;
+}
+
+
+/* Este estilo solo se activa cuando el contenedor tiene la clase 'con-foto' */
+.layout-horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: left; /* El texto queda mejor a la izquierda si tiene una imagen al lado */
+}
+
+/* Ajuste para que la imagen no sea gigante cuando está de costado */
+.layout-horizontal .imagen {
+  max-width: 180px;
+  margin: 0;
+}
+
+
+
+.imagen {
+  display:none;
+  width: 100%;
+  max-width: 250px;
+  margin: 15px auto;
+  border-radius: 10px;
+  border: 4px solid #2e1065;
+  image-rendering: pixelated;
+
+}
+.imagen.con-marco {
+  display: block;
+  padding: 0;
+  background: none;
+  max-width: 320px;
+
+  box-shadow:
+    0 0 0 4px #2e1065,
+    6px 6px 0 0px #1e1b4b;
+  border-radius: 4px;
+}
+
+
+.container.inicio {
+background: transparent;
+  border: none;
+  box-shadow: none;
+}
+.container.inicio #titulo {
+  font-size: 2.2rem;
+  letter-spacing: 4px;
+  color: #c7bfff;
+  text-shadow:
+    2px 2px 0 #2e1065,
+    4px 4px 0 #2e1065;
+}
+.container.final {
+background: transparent;
+  border: none;
+  box-shadow: none;
+}
+.container.final #titulo {
+  display: block ;
+  font-size: 2.2rem;
+  letter-spacing: 4px;
+  color: #c7bfff;
+  text-shadow:
+    2px 2px 0 #2e1065,
+    4px 4px 0 #2e1065;
+    margin-bottom: 20px;
+}
+
+.cofre-panel {
+  margin-top: 30px;
+  text-align: center;
+}
+
+
+
+.cofre {
+position: relative;
+  cursor: pointer;
+  width: 180px;
+  margin: 14px auto;
+  margin-top:14px;
+  display: inline-block;
+}
+
+.cofre img {
+  width: 100%;
+  image-rendering: pixelated;
+  transition: transform 0.2s steps(2);
+}
+
+.cofre:hover img {
+  transform: translateY(-4px);
+}
+
+.recompensa-overlay {
+  position: absolute;
+  top: -30px;           /* ajustá a gusto */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  z-index: 2;
+  animation: aparecer 0.4s steps(4);
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.card {
+  width: 240px;
+  height: 90px;
+  perspective: 800px;
+  cursor: pointer;
+  margin: 5px;
+}
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.5s steps(4);
+  transform-style: preserve-3d;
+}
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  font-family: 'Press Start 2P', monospace;
+  font-size: 13px;
+  padding: 8px;
+
+  border: 3px solid #2e1065;
+  background: #fffbeb;
+  color: #2e1065;
+  box-shadow: 4px 4px 0 #2e1065;
+
+  backface-visibility: hidden;
+}
+.card-back {
+  background: #ede9fe;
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 500px) {
+  .botones-columnas {
+    grid-template-columns: 1fr; /* Una sola columna si no hay espacio */
+  }
+  .card {
+    width: 280px; /* Más anchas todavía ya que están solas */
+    margin: 10px auto;
+  }
+}

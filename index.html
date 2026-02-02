@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+	
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Jueguito</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	
+  <div class="decoracion nube top-left"></div>
+<div class="decoracion nube bottom-right"></div>
+<div class="decoracion nube1 bottom-right1"></div>
+<div class="decoracion nube2 bottom-left2"></div>
+<div class="decoracion cloud bottom-left"></div>
+
+<div class="decoracion estrella estrella-1"></div>
+<div class="decoracion estrella estrella-2"></div>
+
+<div class="decoracion saturno top-right"></div>
+
+<div class="decoracion star star1"></div>
+<div class="decoracion star star2"></div>
+<div class="decoracion star star3"></div>
+<div class="decoracion star star4"></div> 
+<div class="decoracion star star5"></div> 
+  
+<div class="decoracion stars stars1"></div>
+<div class="decoracion stars stars2"></div>
+<div class="decoracion stars stars3"></div>
+
+<div class="decoracion sol sol1"></div>
+<div class="decoracion sol sol2"></div>
+<div class="decoracion sol sol3"></div>
+<div class="decoracion sol sol4"></div>
+<div class="decoracion sol sol5"></div>
+<div class="decoracion sol sol6"></div>
+
+  <div class="container inicio">
+
+    <h1 id="titulo">¿Queres jugar un jueguito conmigo?</h1>
+   <button id="startBtn" class="start" onclick="aceptar()">
+    ▶ START
+    </button>
+
+    <!--<p id="texto" style="display:none"></p>
+    <img id="imagen" class="imagen" style="display:none">-->
+    
+   <div id="area-contenido"> 
+	   <p id="texto" style="display:none"></p>
+    <img id="imagen" class="imagen" style="display:none">
+    <img src="img/level.png" alt="Sticker de level" class="sticker level" id="level">
+    <img src="img/heart.png" alt="Sticker de heart" class="sticker heart" id="heart">
+</div>
+
+<p id="subtexto" class="subtexto"></p>
+  <div id="botones"></div>
+
+<div id="recompensa" class="recompensa" style="display:none">
+  <button class="si" onclick="siguiente()">Sí </button>
+  <button class="no">No </button>
+</div>
+
+
+
+<div id="cofre-panel" class="cofre-panel" style="display:none">
+  <div id="cofre" class="cofre" onclick="abrirCofre()">
+    <img id="cofre-img" src="img/cofre-cerrado.png" alt="Cofre">
+    
+    <!-- recompensa SUPERPUESTA -->
+    <img
+      id="recompensa-img"
+      class="recompensa-overlay"
+      src="img/pareja.png"
+      alt="Recompensa"
+      style="display:none"
+    >
+  </div>
+</div>
+
+</div>
+
+
+  
+  <script src="script.js"></script>
+  <audio id="musicaFondo" src="sounds/background.mp3" loop></audio> 
+  
+</body>
+
+
+
+</html>
